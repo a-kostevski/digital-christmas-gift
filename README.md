@@ -4,11 +4,11 @@ A playful, interactive digital Christmas gift card built with vanilla JS, CSS an
 
 ## 🎄 Demo
 
-[Live Demo](add-your-github-pages-link-here)
+[Live Demo](Todo)
 
 ## 📸 Preview
 
-![Gift Card Preview](add-screenshot-path-here)
+![Gift Card Preview](Todo)
 
 ## 🛠️ Technologies Used
 
@@ -23,7 +23,7 @@ A playful, interactive digital Christmas gift card built with vanilla JS, CSS an
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/digital-christmas-card.git
+git clone https://github.com/a-kostevski/digital-christmas-gift.git
 ```
 
 2. Open `index.html` in your browser
