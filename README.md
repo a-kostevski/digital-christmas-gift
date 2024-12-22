@@ -42,7 +42,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-While this is a personal gift project, feel free to fork and adapt it for your own use!
+While this is a personal gift project, feel free to fork and adapt it for your own use.
 
 ## 🙏 Acknowledgments
 
