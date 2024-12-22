@@ -1,279 +1,108 @@
-
-<!DOCTYPE html>
+<!--This is a digital christmas present card to my mother in law.-->
+<!--The gift is participation in an obstacle course with one of her two rhodesian ridgebacks.-->
+<!--The tone is light hearted and as humurous as possible while retaining a mildly formative tone.-->
+<!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Muddy Paws: Pick Your Fighter</title>
-    <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <div class="container">
-            <h1>MUDDY PAWS: SELECT YOUR FIGHTER</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Muddy Paws: Interactive dog character selection game"
+    />
+    <title>Muddy Paws: Pick Your Fighter</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="announcement-section" class="active-section">
+        <div class="gift-announcement">
+          <div class="gift-icon">🎄</div>
+          <h2>GOD JUL</h2>
+          <p class="gift-rhyme">
+            På julafton stor och klar,<br />
+            Ett äventyr för dig jag har!<br />
+            Med fyrbent vän du får ge dig ut,<br />
+            I gyttjans oändliga djup.
+          </p>
+          <div id="open-div" class="active-section">
+            <button id="open-button" class="continue-button">
+              Öppna paket
+            </button>
+          </div>
+          <div id="continue-div" class="hidden-section">
+            <p class="gift-description">Deltagande i</p>
+            <div class="muddy-paws-logo">MUDDY PAWS</div>
 
-            <div class="fighters-grid">
-                <!-- Maika Container -->
-                <div class="fighter-container" data-fighter="Maika">
-                    <div class="fighter-header">MAIKA</div>
-                    <div class="stats">
-                        <strong>STATS</strong>
-                        <ul>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">STRENGTH</span>
-                                    <span class="stat-value">40</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 40%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">INTELLIGENCE</span>
-                                    <span class="stat-value">60</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 60%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">DEXTERITY</span>
-                                    <span class="stat-value">80</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 80%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">ENDURANCE</span>
-                                    <span class="stat-value">50</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 50%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">COURAGE</span>
-                                    <span class="stat-value">15</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 15%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">SPEED</span>
-                                    <span class="stat-value">70</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 70%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="proscons">
-                        <h3>ADVANTAGES</h3>
-                        <ul>
-                            <li>Agile and Quick</li>
-                            <li>High Energy</li>
-                            <li></li>
-                        </ul>
-                        <h3>LIMITATIONS</h3>
-                        <ul>
-                            <li>Unexperienced</li>
-                            <li>Easily Distracted</li>
-                            <li>Low courage</li>
-                        </ul>
-                    </div>
-                    <button class="select-button"
-                        onclick="selectFighter('Maika')">Select Maika</button>
-                </div>
-
-                <!-- Leon Container -->
-                <div class="fighter-container" data-fighter="Leon">
-                    <div class="fighter-header">LEON</div>
-                    <div class="stats">
-                        <strong>STATS</strong>
-                        <ul>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">STRENGTH</span>
-                                    <span class="stat-value">80</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 80%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">INTELLIGENCE</span>
-                                    <span class="stat-value">22</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 22%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">DEXTERITY</span>
-                                    <span class="stat-value">30</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 30%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">ENDURANCE</span>
-                                    <span class="stat-value">60</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 60%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">COURAGE</span>
-                                    <span class="stat-value">75</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 75%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="stat-label">
-                                    <span class="stat-name">SPEED</span>
-                                    <span class="stat-value">40</span>
-                                </div>
-                                <div class="stat-bar-bg">
-                                    <div class="stat-bar"
-                                        style="width: 40%"></div>
-                                </div>
-                                <div class="stat-ticks">
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                    <div class="stat-tick"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="proscons">
-                        <h3>ADVANTAGES</h3>
-                        <ul>
-                            <li>Mamas boy</li>
-                            <li>Veteran</li>
-                            <li>Chonky boi</li>
-                        </ul>
-                        <h3>LIMITATIONS</h3>
-                        <ul>
-                            <li>Limited cognitive processing capabilities</li>
-                            <li>Water fobia</li>
-                            <li>Flight risk</li>
-                        </ul>
-                    </div>
-                    <button class="select-button"
-                        onclick="selectFighter('Leon')">Select Leon</button>
-                </div>
-            </div>
+            <button id="continue-button" class="continue-button">
+              Choose Your Companion
+            </button>
+          </div>
         </div>
-        <!--<div class="sound-controls">-->
-        <!--    <button id="toggleSound" class="sound-button">-->
-        <!--        🔊 -->
-        <!--    </button>-->
-        <!--</div>-->
-        <script src="main.js"></script>
-    </body>
+      </section>
+      <section id="character-selection-section" class="hidden-section">
+        <h1>CHOOSE YOUR FIGHTER</h1>
+        <div class="scroll-arrows">
+          <button class="scroll-arrow scroll-left" aria-label="Scroll left">
+            ←
+          </button>
+          <button class="scroll-arrow scroll-right" aria-label="Scroll right">
+            →
+          </button>
+        </div>
+        <div class="fighters-grid">
+          <template id="fighter-template">
+            <div class="fighter-container">
+              <div class="fighter-sticky-header">
+                <div class="fighter-mini-avatar">
+                  <img src="" alt="" class="avatar-mini-img" />
+                </div>
+                <span class="fighter-name"></span>
+              </div>
+              <div class="fighter-header"></div>
+              <div class="fighter-avatar">
+                <img src="" alt="" class="avatar-img" />
+              </div>
+              <div class="fighter-bio"></div>
+              <div class="stats">
+                <strong>STATS</strong>
+                <ul class="stats-list"></ul>
+              </div>
+              <div class="proscons">
+                <h3>ADVANTAGES</h3>
+                <ul class="advantages"></ul>
+                <h3>LIMITATIONS</h3>
+                <ul class="limitations"></ul>
+              </div>
+              <button class="select-button" type="button">
+                Select <span class="fighter-name"></span>
+              </button>
+            </div>
+          </template>
+        </div>
+      </section>
+      <dialog class="modal-overlay" id="confirmationModal">
+        <div class="confirmation-modal">
+          <div class="modal-image">
+            <img id="modal-img" src="assets/img/leon-really.png" />
+          </div>
+          <div class="modal-text">
+            <p id="confirmationMessage"></p>
+          </div>
+          <div class="modal-buttons">
+            <button class="modal-button confirm-btn" id="confirmChoice">
+              Yes
+            </button>
+            <button class="modal-button cancel-btn" id="cancelChoice">
+              No
+            </button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
