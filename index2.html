@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muddy Paws: Pick Your Fighter</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    :root {
+      --primary: #4CAF50;
+      --secondary: #9C27B0;
+      --background: #1a1a1a;
+      --card-bg: #2a2a2a;
+      --text: #ffffff;
+      --highlight: #FFC107;
+      --shadow: rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px var(--shadow);
+    }
+
+    .fighters-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .fighter-container {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 6px var(--shadow);
+    }
+
+    .fighter-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px var(--shadow);
+    }
+
+    .fighter-container.active {
+      border: 2px solid var(--highlight);
+    }
+
+    .fighter-header {
+      font-size: 1.5rem;
+      color: var(--highlight);
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .fighter-header::after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 2px;
+      background: var(--highlight);
+      margin: 1rem auto;
+    }
+
+    .stats {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stats ul {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .stats li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.8rem 0;
+    }
+
+    .stat-bar {
+      background: var(--primary);
+      height: 8px;
+      border-radius: 4px;
+      margin-left: 1rem;
+      flex-grow: 1;
+    }
+
+    .proscons {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .proscons h3 {
+      color: var(--highlight);
+      margin: 1rem 0;
+      font-size: 0.8rem;
+    }
+
+    .proscons ul {
+      list-style: none;
+    }
+
+    .proscons li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+    }
+
+    .proscons li::before {
+      content: '►';
+      color: var(--highlight);
+    }
+
+    .select-button {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: var(--text);
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: auto;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .select-button:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    .selected {
+      animation: pulse 0.5s ease infinite;
+    }
+
+    @media (max-width: 768px) {
+      .fighters-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .fighter-container {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MUDDY PAWS: SELECT YOUR FIGHTER</h1>
+    
+    <div class="fighters-grid">
+      <!-- Maika Container -->
+      <div class="fighter-container" data-fighter="Maika">
+        <div class="fighter-header">MAIKA</div>
+        <div class="stats">
+          <strong>STATS</strong>
+          <ul>
+            <li>
+              <span>STRENGTH</span>
+              <div class="stat-bar" style="width: 70%"></div>
+            </li>
+            <li>
+              <span>INTELLIGENCE</span>
+              <div class="stat-bar" style="width: 60%"></div>
+            </li>
+            <li>
+              <span>DEXTERITY</span>
+              <div class="stat-bar" style="width: 90%"></div>
+            </li>
+            <li>
+              <span>ENDURANCE</span>
+              <div class="stat-bar" style="width: 80%"></div>
+            </li>
+            <li>
+              <span>COURAGE</span>
+              <div class="stat-bar" style="width: 75%"></div>
+            </li>
+            <li>
+              <span>SPEED</span>
+              <div class="stat-bar" style="width: 85%"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="proscons">
+          <h3>ADVANTAGES</h3>
+          <ul>
+            <li>Agile and Quick</li>
+            <li>High Energy</li>
+            <li>Loyal Teammate</li>
+          </ul>
+          <h3>LIMITATIONS</h3>
+          <ul>
+            <li>Easily Distracted</li>
+            <li>Overconfident</li>
+          </ul>
+        </div>
+        <button class="select-button" onclick="selectFighter('Maika')">Select Maika</button>
+      </div>
+      
+      <!-- Leon Container -->
+      <div class="fighter-container" data-fighter="Leon">
+        <div class="fighter-header">LEON</div>
+        <div class="stats">
+          <strong>STATS</strong>
+          <ul>
+            <li>
+              <span>STRENGTH</span>
+              <div class="stat-bar" style="width: 80%"></div>
+            </li>
+            <li>
+              <span>INTELLIGENCE</span>
+              <div class="stat-bar" style="width: 75%"></div>
+            </li>
+            <li>
+              <span>DEXTERITY</span>
+              <div class="stat-bar" style="width: 65%"></div>
+            </li>
+            <li>
+              <span>ENDURANCE</span>
+              <div class="stat-bar" style="width: 70%"></div>
+            </li>
+            <li>
+              <span>COURAGE</span>
+              <div class="stat-bar" style="width: 90%"></div>
+            </li>
+            <li>
+              <span>SPEED</span>
+              <div class="stat-bar" style="width: 70%"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="proscons">
+          <h3>ADVANTAGES</h3>
+          <ul>
+            <li>Courageous</li>
+            <li>Strategic Mind</li>
+            <li>Gentle Giant</li>
+          </ul>
+          <h3>LIMITATIONS</h3>
+          <ul>
+            <li>Slower Pace</li>
+            <li>Stubborn Streak</li>
+          </ul>
+        </div>
+        <button class="select-button" onclick="selectFighter('Leon')">Select Leon</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fighters = document.querySelectorAll('.fighter-container');
+      const selectSound = new Audio('select.wav');
+      selectSound.volume = 0.3;
+
+      let currentSelection = null;
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          navigateFighters(e.key === 'ArrowRight');
+        }
+        if (e.key === 'Enter' && currentSelection) {
+          selectFighter(currentSelection.dataset.fighter);
+        }
+      });
+
+      fighters.forEach(fighter => {
+        fighter.addEventListener('mouseenter', () => {
+          if (currentSelection !== fighter) {
+            selectSound.currentTime = 0;
+            selectSound.play().catch(() => {});
+          }
+          fighter.classList.add('active');
+          currentSelection = fighter;
+        });
+        
+        fighter.addEventListener('mouseleave', () => {
+          fighter.classList.remove('active');
+        });
+      });
+
+      function navigateFighters(next) {
+        const fightersArray = Array.from(fighters);
+        const currentIndex = currentSelection ? fightersArray.indexOf(currentSelection) : -1;
+        let newIndex = next ? currentIndex + 1 : currentIndex - 1;
+
+        if (newIndex >= fightersArray.length) newIndex = 0;
+        if (newIndex < 0) newIndex = fightersArray.length - 1;
+
+        currentSelection?.classList.remove('active');
+        currentSelection = fightersArray[newIndex];
+        currentSelection.classList.add('active');
+        selectSound.currentTime = 0;
+        selectSound.play().catch(() => {});
+      }
+    });
+
+    function selectFighter(fighterName) {
+      const selectSound = new Audio('choose.wav');
+      selectSound.play().catch(() => {});
+      
+      document.querySelector(`[data-fighter="${fighterName}"]`)
+        .classList.add('selected');
+        
+      setTimeout(() => {
+        alert(`You have chosen ${fighterName}! Get ready for the Muddy Paws Obstacle Course!`);
+      }, 500);
+    }
+  </script>
+</body>
+</html>
