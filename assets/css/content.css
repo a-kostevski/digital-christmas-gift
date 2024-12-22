@@ -31,6 +31,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Typography */
@@ -195,6 +197,8 @@ h1 {
 
 /* Components */
 .gift-announcement {
+  position: relative;
+  z-index: 1;
   max-height: 100vh;
   text-align: center;
   margin-bottom: 4rem;
