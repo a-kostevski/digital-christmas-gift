@@ -1,0 +1,554 @@
+:root {
+  --primary: #4caf50;
+  --secondary: #9c27b0;
+  --background: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --text: #ffffff;
+  --highlight: #ffc107;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Typography */
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px var(--shadow);
+}
+
+.hidden-section {
+  display: none;
+}
+
+.active-section {
+  display: block;
+}
+
+.gift-announcement h2 {
+  font-size: 1.8rem;
+  color: var(--highlight);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px var(--highlight);
+}
+
+.muddy-paws-logo {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.gift-description,
+.gift-subtitle,
+.fighter-bio {
+  font-family: "Roboto", sans-serif;
+}
+
+.gift-description {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.gift-subtitle {
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  line-height: 1.6;
+}
+
+.gift-rhyme {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 1.5rem auto;
+  line-height: 1.8;
+  font-style: italic;
+  text-shadow: 0 0 5px var(--highlight);
+  text-align: left;
+  max-width: 300px; /* or whatever width works best for your design */
+  padding: 0 1rem;
+}
+
+.fighter-bio {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+/* Layout */
+.fighters-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fighter-container {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px var(--shadow);
+  border: 2px solid transparent;
+}
+
+.fighter-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--shadow);
+  border-color: var(--highlight);
+}
+
+.fighter-container.active {
+  border: 2px solid var(--highlight);
+}
+
+.fighter-header {
+  font-size: 1.5rem;
+  color: var(--highlight);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.fighter-header::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background: var(--highlight);
+  margin: 1rem auto;
+}
+
+.fighter-avatar {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--highlight);
+  box-shadow: 0 0 15px var(--shadow);
+}
+
+.fighter-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.fighter-container:hover .fighter-avatar img {
+  transform: scale(1.1);
+}
+
+.fighter-bio {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  border-left: 3px solid var(--highlight);
+}
+
+.fighter-bio:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease;
+}
+
+/* Components */
+.gift-announcement {
+  max-height: 100vh;
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px solid var(--highlight);
+  animation: glow 2s ease-in-out infinite;
+}
+
+.gift-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
+}
+
+.stats {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stats strong {
+  font-size: 0.8rem;
+  color: var(--highlight);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.stats ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stats li {
+  margin: 1.2rem 0;
+}
+
+.stat-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.stat-name {
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.stat-value {
+  color: var(--highlight);
+}
+
+.stat-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.stats li:hover .stat-bar {
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.stat-ticks {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+  margin-top: 4px;
+}
+
+.stat-tick {
+  width: 1px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.proscons {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.proscons h3 {
+  color: var(--highlight);
+  margin: 1rem 0;
+  font-size: 0.8rem;
+}
+
+.proscons ul {
+  list-style: none;
+}
+
+.proscons li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.proscons li::before {
+  content: "►";
+  color: var(--highlight);
+}
+
+.select-button {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.select-button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-modal {
+  background: var(--card-bg);
+  border: 3px solid var(--highlight);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modal-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  border: 3px solid var(--highlight);
+  overflow: hidden;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Flip the image horizontally for a funny effect */
+}
+
+.modal-text {
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: var(--text);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.modal-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-button:hover {
+  transform: scale(1.05);
+}
+
+.continue-button {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.continue-button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.confirm-btn {
+  background: var(--primary);
+  color: var(--text);
+}
+
+.cancel-btn {
+  background: var(--secondary);
+  color: var(--text);
+}
+
+.selected {
+  animation: pulse 0.5s ease infinite;
+}
+
+.scroll-arrows {
+  display: none;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 10;
+  padding: 0 0.2rem;
+}
+
+.scroll-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2px solid var(--highlight);
+  color: var(--highlight);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-arrow:hover {
+  opacity: 1;
+}
+
+.scroll-arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fighter-sticky-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  border-bottom: 2px solid var(--highlight);
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fighter-sticky-header.visible {
+  display: flex;
+}
+
+.fighter-sticky-header .fighter-name {
+  color: var(--highlight);
+  font-size: 1rem;
+}
+
+.fighter-mini-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--highlight);
+}
+
+.avatar-mini-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fighter-sticky-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  border-bottom: 2px solid var(--highlight);
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fighter-sticky-header.visible {
+  display: flex;
+}
+
+.fighter-mini-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--highlight);
+}
+
+.avatar-mini-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.showing {
+  display: flex !important;
+}
