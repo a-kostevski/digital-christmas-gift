@@ -23,7 +23,7 @@ A playful, interactive digital Christmas gift card built with vanilla JS, CSS an
 1. Clone the repository
 
 ```bash
-git clone https://github.com/a-kostevski/digital-christmas-gift.git
+git clone https://github.com/a-kostevski/digital-christmas-card.git
 ```
 
 2. Open `index.html` in your browser
