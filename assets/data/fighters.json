@@ -1,0 +1,48 @@
+{
+  "fighters": {
+    "Maika": {
+      "imageUrl": "assets/img/maika.png",
+      "bio": "At just 10 months old, this Christmas puppy brings more energy than Santa's reindeer. While bred to hunt lions, our precious Maika would rather chase snowflakes and run from her own jingle bells. A bouncing bundle of holiday joy with the heart of a cautious elf - she might need some convincing that the obstacle course isn't hiding the abominable snowman!",
+      "stats": {
+        "strength": 40,
+        "intelligence": 43,
+        "dexterity": 77,
+        "endurance": 46,
+        "courage": 15,
+        "speed": 73
+      },
+      "advantages": [
+        "Water enthusiast",
+        "Agile and quick",
+        "High energy"
+      ],
+      "limitations": [
+        "Inexperienced",
+        "Easily distracted",
+        "Low courage"
+      ]
+    },
+    "Leon": {
+      "imageUrl": "assets/img/leon.png",
+      "bio": "This 2.5-year-old gentle giant has the spirit of Santa but the grace of a snowman in spring! While not quite making the cut for Santa's problem-solving elf team, Leon brings the strength of all nine reindeer combined. His strategy for the obstacle course? Powering through like a Christmas train that forgot its brakes. Just don't expect him to read the course map - navigation isn't on his list of Christmas miracles!",
+      "stats": {
+        "strength": 84,
+        "intelligence": 18,
+        "dexterity": 27,
+        "endurance": 66,
+        "courage": 75,
+        "speed": 42
+      },
+      "advantages": [
+        "Loyal companion",
+        "Veteran runner",
+        "High strength and constitution"
+      ],
+      "limitations": [
+        "Jealous tendencies",
+        "Water phobia",
+        "Flight risk"
+      ]
+    }
+  }
+}
